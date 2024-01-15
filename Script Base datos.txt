@@ -1,0 +1,73 @@
+--Hay un easter egg en el login en el icono-boton de la tienda
+create database venta;
+use venta;
+
+-- Estructura de tabla para la tabla `producto`
+--
+
+CREATE TABLE `producto` (
+  `codigo` varchar(5) DEFAULT NULL,
+  `nombre` varchar(30) DEFAULT NULL,
+  `stock` int(3) DEFAULT NULL,
+  `precio` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`codigo`, `nombre`, `stock`, `precio`) VALUES
+('1', 'Ravioli', 40, 1400),
+('2', 'ColaCao Pillows', 80, 2500),
+('3', 'Arroz', 60, 1500),
+('4', 'Aceite', 20, 1200),
+('5', 'Azucar', 35, 800),
+('6', 'Frutillas', 18, 3000),
+('7', 'Sal', 30, 700),
+('8', 'Manjarate', 40, 950),
+('9', 'Yogurt', 50, 1000),
+('10', 'Leche', 30, 2000),
+('11', 'Atun', 200, 450),
+('12', 'Avena', 44, 2000),
+('13', 'Slurm', 101, 3000),
+('14', 'Manzana', 13, 500),
+('15', 'Lomo liso (carnes premium)', 25, 19990),
+('16', 'Bombon Ferrero rocher', 16, 20000),
+('17', 'Agua mineral', 38, 890),
+('18', 'Pilas', 25, 2990);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `nombre` varchar(30) DEFAULT NULL,
+  `usuario` varchar(30) DEFAULT NULL,
+  `clave` varchar(8) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`nombre`, `usuario`, `clave`) VALUES
+('Adolfo', 'ad.venegas', '12345678'),
+('Emmanuel', 'Emma.c', '12345678');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `venta`
+--
+
+CREATE TABLE `venta` (
+  `folio` int(11) DEFAULT NULL,
+  `fecha_actual` date DEFAULT NULL,
+  `cantidad_productos` varchar(4) DEFAULT NULL,
+  `subtotal` int(11) DEFAULT NULL,
+  `iva` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL,
+  `vendedor` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
